@@ -1,5 +1,9 @@
 package data;
 
-public interface PresidentsDAO {
+import java.util.List;
 
+public interface PresidentsDAO {
+	void getTermNumber();
+	List<President> loadPresidentsFromFile();
+	List<President> getFilteredList(String List);
 }
