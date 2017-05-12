@@ -8,9 +8,17 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+
 
 public class PresidentsDaoImpl implements PresidentsDAO{
+	private ServletContext context;
 	private List<President> presidents = new ArrayList<>();
+	
+	public PresidentsDaoImpl(ServletContext context) {
+		this.context = context;
+	}
+	
 	@Override
 	public void getTermNumber() {
 		
@@ -20,31 +28,23 @@ public class PresidentsDaoImpl implements PresidentsDAO{
 		try (BufferedReader reader = new BufferedReader(new FileReader("WEB-INF/presidents.txt"))) {
 			String record = reader.readLine();
 			while ((record = reader.readLine()) != null) {
-				String[] col = record.split("\\|");
+				String[] column = record.split("\\|");
 
-				int term = Integer.parseInt(col[0]);
-				String fName = col[1];
-				String mName = col[2];
-				String lName = col[3];
-				LocalDate termBegin = LocalDate.parse(col[4], formatter);
-				LocalDate termEnd;
-				termEnd = null;
-				try {
-					termEnd = LocalDate.parse(col[5], formatter);
-				} catch (DateTimeParseException e) {
-					System.out.println();
-				}
-				int won = Integer.parseInt(col[6]);
-				String whyLeft = col[7];
-				String party = col[8];
-				//
-				President pres = new President(term, fName, mName, lName, termBegin, termEnd, won, whyLeft, party);
+				int termNumber = Integer.parseInt(column[0]);
+				String firstName = column[1];
+				String middleName = column[2];
+				String lastName = column[3];
+				String name = firstName.concat(middleName).concat(lastName);
+				int startYear = Integer.parseInt(column[4]);
+				int endYear = Integer.parseInt(column[5]);
+				String funFact = column[6];
+				President pres = new President(termNumber, startYear, endYear, name, funFact);
 				presidents.add(pres);
 			}
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
-			System.exit(1);
 		}
+		return presidents;
 	}
 	@Override
 	public List<President> getFilteredList(String List){
