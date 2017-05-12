@@ -7,7 +7,11 @@
 <title>Presidents</title>
 </head>
 <body>
-<a href="/President"><img src="http://app1.kuhf.org/_images/content/photos/PrezSeal.png"/></a>
+
+<form action="president.do" method="post">
+  <button type="submit"><img src="http://app1.kuhf.org/_images/content/photos/PrezSeal.png"/></button>
+</form>
+ 
 
 
 </body>
