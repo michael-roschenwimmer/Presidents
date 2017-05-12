@@ -19,9 +19,13 @@ public class PresidentsServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		PresidentsDao pres = new PresidentsDaoImpl(this.getServletContext());
-//		
-//		req.setAttribute("presPic", arg1);
+		PresidentsDao pres = new PresidentsDaoImpl(this.getServletContext());
+		
+		req.setAttribute("presPic", arg1);
+		//"PresidentPics/44.jpg"
+		
+		int tracker = 0;
+		req.setAttribute("pres", );
 		req.getRequestDispatcher("Presidents.jsp").forward(req, resp);
 	}
 	

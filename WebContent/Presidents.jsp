@@ -9,8 +9,19 @@
 <title>Presidential</title>
 </head>
 <body>
-		<div id="presPic"> <img src="PresidentPics/44.jpg"/> </div>
+		<div id="presPic"> <img src="${pres.pic}"/> </div>
 		<div id="presStats">President ${pres.name} | Term:${pres.termNumber} 
 		[ ${pres.startYear} - ${pres.endYear} ]</div>
+		
+		<c:choose>
+     <c:when test="${tracker.index +1 != presidents.size}">
+     	<form action="">
+     	<button type="submit" value="${tracker.next} Next"/>
+     	</form>
+     </c:when>
+     <c:otherwise>
+      <button type="submit" disabled>Next</button>
+     </c:otherwise>
+    </c:choose>
 </body>
 </html>
