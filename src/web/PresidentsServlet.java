@@ -3,12 +3,11 @@ package web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import data.ItemDaoListImpl;
+import data.PresidentsDaoImpl;
 
 //@WebServlet("Presidents")
 public class PresidentsServlet extends HttpServlet {
@@ -20,7 +19,9 @@ public class PresidentsServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		PresidentDao pres = new PresidentDaoListImpl(this.getServletContext());
+//		PresidentsDao pres = new PresidentsDaoImpl(this.getServletContext());
+//		
+//		req.setAttribute("presPic", arg1);
 		req.getRequestDispatcher("Presidents.jsp").forward(req, resp);
 	}
 	
