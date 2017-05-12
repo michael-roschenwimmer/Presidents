@@ -9,7 +9,7 @@
 <title>Presidential</title>
 </head>
 <body>
-		<div id="presPic">${pres.getPic}</div>
+		<div id="presPic"> <img src="PresidentPics/44.jpg"/> </div>
 		<div id="presStats">President ${pres.name} | Term:${pres.termNumber} 
 		[ ${pres.startYear} - ${pres.endYear} ]</div>
 </body>
