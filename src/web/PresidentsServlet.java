@@ -8,19 +8,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import data.ItemDaoListImpl;
+
 //@WebServlet("Presidents")
 public class PresidentsServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		req.getRequestDispatcher("Welcome.jsp").forward(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
+		PresidentDao pres = new PresidentDaoListImpl(this.getServletContext());
+		req.getRequestDispatcher("Presidents.jsp").forward(req, resp);
 	}
 	
 	
