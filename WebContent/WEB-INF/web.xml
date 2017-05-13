@@ -5,12 +5,12 @@
   </welcome-file-list>
   
   <servlet>
-  	<servlet-name>MyCartlet</servlet-name>
+  	<servlet-name>MyServlet</servlet-name>
 	<servlet-class>web.PresidentsServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>MyCartlet</servlet-name>
+  	<servlet-name>MyServlet</servlet-name>
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
   
