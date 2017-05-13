@@ -52,8 +52,8 @@ public class PresidentsDaoImpl implements PresidentsDAO{
 				String[] years = year.split("-");
 				int startYear = Integer.parseInt(years[0]);
 				int endYear = Integer.parseInt(years[1]);
-				String party = column[6];
-				String funFact = column[7];
+				String party = column[5];
+				String funFact = column[6];
 				President pres = new President(termNumber, startYear, endYear, name, party, funFact);
 				presidents.add(pres);
 			}
