@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import data.President;
-import data.PresidentsDAO;
 import data.PresidentsDaoImpl;
 
-//@WebServlet("Presidents")
+
 public class PresidentsServlet extends HttpServlet {
 	PresidentsDaoImpl president;
 	
@@ -32,17 +31,16 @@ public class PresidentsServlet extends HttpServlet {
 		president.setTracker(president.getTracker() + Integer.parseInt(req.getParameter("result")));
 		}
 		
-		//int tracker = president.getTracker();
-		System.out.println(req.getParameter("result") + " tracker value");
-		
-		//req.setAttribute("presPic", pres.getPic());
-		//"PresidentPics/44.jpg"
 		
 		if(!filtered){
 			pres= president.loadPresidentsFromFile(this.getServletContext());
 		} else{
-			//Make this the filtered lists
+
 			pres = new ArrayList<>();
+		}
+		
+		if(req.getParameter("filterNum")!= null){
+			president.setTracker(Integer.parseInt(req.getParameter("filterNum")));
 		}
 		
 		System.out.println(president.getTracker());

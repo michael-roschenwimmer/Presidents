@@ -27,10 +27,21 @@
 	<input type="submit"/>
 	</form> --%>
 	
-	
+		<div id="searchByTerm"> <form action="next.do" method="post">
+		<h4> Search by term</h4>
+     	<input type="text" name="filterNum" >
+     	<button type="submit">Submit</button>
+     	</form></div>
+		
+		
+		<br>
+		<br>
+		<br>
+		<br>
 		<div id="presPic"> <img src="${president.getPic(pres)}"/> </div>
 		<div id="presStats">President ${pres.name} | Term:${pres.termNumber} 
-		[ ${pres.startYear} - ${pres.endYear} ]</div>
+		[ ${pres.startYear} - ${pres.endYear} ] <br> 
+			${pres.funFact} </div>
 		
 		 
      <c:if test="${tracker +1 != presidents.size()}">
