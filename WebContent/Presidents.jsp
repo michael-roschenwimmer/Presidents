@@ -9,6 +9,24 @@
 <title>Presidential</title>
 </head>
 <body>
+
+	<form action="${filtered = true}">
+	Filter by:
+	<select>
+	<option> party </option>
+	<option> name </option>
+	<option> 
+	</select>
+	
+	
+	</form>
+	
+	<form action="${tracker = Integer.parseInt(req.getParameter(term))}" >
+	Search by term <input type="text" name="term"> <br>
+	<input type="submit"/>
+	</form>
+	
+	
 		<div id="presPic"> <img src="${pres.pic}"/> </div>
 		<div id="presStats">President ${pres.name} | Term:${pres.termNumber} 
 		[ ${pres.startYear} - ${pres.endYear} ]</div>
