@@ -34,7 +34,7 @@
 		
 		 
      <c:if test="${tracker +1 != presidents.size()}">
-     <input type="hidden" name="tracker" value="${president.getPrevious()}" />
+     <input type="hidden" name="tracker" value="${president.getNext()}" />
      	<form action="next.do" method="post">
      	<button type="submit">Next</button>
      	</form>
@@ -58,7 +58,7 @@
      </c:if>
      <c:if test="${tracker == 0}">
      	<form action="back.do" method="post">
-     	<label>Back <button type="submit" disabled></button></label>
+     	<button type="submit" disabled>Back</button>
      	</form>
      </c:if>
      

@@ -15,7 +15,7 @@ import javax.servlet.ServletContext;
 public class PresidentsDaoImpl implements PresidentsDAO{
 	private ServletContext context;
 	private List<President> presidents = new ArrayList<>();
-	private static int tracker = 0;
+	private int tracker = 0;
 	
 	public PresidentsDaoImpl(ServletContext context) {
 		this.context = context;
@@ -27,7 +27,7 @@ public class PresidentsDaoImpl implements PresidentsDAO{
 		return tracker+1;
 	}
 	public int getPrevious() {
-//		tracker--;
+		tracker--;
 		System.out.println("in getPrevious");
 		return tracker-1;
 	}
