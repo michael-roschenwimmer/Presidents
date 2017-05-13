@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -13,10 +15,25 @@ import javax.servlet.ServletContext;
 public class PresidentsDaoImpl implements PresidentsDAO{
 	private ServletContext context;
 	private List<President> presidents = new ArrayList<>();
+	private int tracker = 0;
 	
 	public PresidentsDaoImpl(ServletContext context) {
 		this.context = context;
 	}
+	
+	public void getNext() {
+		tracker++;
+	}
+	public void getPrevious() {
+		tracker--;
+	}
+	public int getTracker() {
+		return tracker;
+	}
+	public void setTracker(int t) {
+		this.tracker = t;
+	}
+	
 	
 	@Override
     public President getTermNumber(Integer termNumber) {
@@ -39,7 +56,7 @@ public class PresidentsDaoImpl implements PresidentsDAO{
 	public List<President> loadPresidentsFromFile(ServletContext context) {
 		InputStream is = context.getResourceAsStream("WEB-INF/presidents.txt");
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-			String record = reader.readLine();
+			String record;
 			while ((record = reader.readLine()) != null) {
 				
 				String[] column = record.split("\\|");
@@ -62,6 +79,7 @@ public class PresidentsDaoImpl implements PresidentsDAO{
 		}
 		return presidents;
 	}
+	
 	 @Override
 	    public List<President> getFilteredList(String filtered){
 	        List<President> president = new ArrayList<>();

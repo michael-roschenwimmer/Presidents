@@ -31,7 +31,7 @@ public class PresidentsServlet extends HttpServlet {
 		//"PresidentPics/44.jpg"
 		
 		if(!filtered){
-			pres= president.loadPresidentsFromFile();
+			pres= president.loadPresidentsFromFile(this.getServletContext());
 		} else{
 			//Make this the filtered lists
 			pres = new ArrayList<>();
