@@ -2,13 +2,14 @@ package data;
 
 public class President {
 	private int termNumber, startYear, endYear;
-	private String name, funFact;
+	private String name, funFact, party;
 	
-	public President(int termNumber, int startYear, int endYear, String name, String funFact) {
+	public President(int termNumber, int startYear, int endYear, String name, String party, String funFact) {
 		this.termNumber = termNumber;
 		this.startYear = startYear;
 		this.endYear = endYear;
 		this.name = name;
+		this.party = party;
 		this.funFact = funFact;
 	}
 
@@ -44,6 +45,13 @@ public class President {
 		this.name = name;
 	}
 
+	public String getParty() {
+		return party;
+	}
+	
+	public void setParty(String party) {
+		this.party = party;
+	}
 	public String getFunFact() {
 		return funFact;
 	}
