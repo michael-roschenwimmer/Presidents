@@ -1,12 +1,40 @@
 * {
 	background-color: darkgray;
-	
+}
+
+img.president {
+	border: 3px solid black;
+}
+
+.nextButton {
+	/*  display: block;
+  margin-left: auto;
+  margin-right: auto; */
+	position: absolute;
+	bottom: 10%;
+	right: 15%;
+}
+
+.backButton {
+	/*  display: block;
+  margin-left: auto;
+  margin-right: auto; */
+	position: absolute;
+	bottom: 10%;
+	left:15%;
 }
 
 button.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.zap {
+	width: 10%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 h1, h2, h3, h4, h5, h6, p, div {

@@ -8,11 +8,16 @@
 <title>Presidents</title>
 </head>
 <body>
+<img src="zapPatriot.gif" alt="zapPatriot" class="zap"/>
+
+
 
 <form action="president.do" method="post">
  <button type="submit" class="center"><img src="http://app1.kuhf.org/_images/content/photos/PrezSeal.png" alt="President's Seal"/></button>
 </form>
 <h3>Click the President's Seal</h3>
+
+
  
 
 
