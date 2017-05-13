@@ -24,15 +24,16 @@ public class PresidentsServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
+	
 		boolean filtered = false;
 		List<President> pres;
-		if(req.getParameter("tracker").equals("null")){
-		president.setTracker(Integer.parseInt(req.getParameter("tracker")));
+	   
+		if(req.getParameter("result") != null){
+		president.setTracker(president.getTracker() + Integer.parseInt(req.getParameter("result")));
 		}
-		int tracker = president.getTracker();
-		System.out.println(req.getParameter("tracker") + " tracker value");
+		
+		//int tracker = president.getTracker();
+		System.out.println(req.getParameter("result") + " tracker value");
 		
 		//req.setAttribute("presPic", pres.getPic());
 		//"PresidentPics/44.jpg"
@@ -47,8 +48,8 @@ public class PresidentsServlet extends HttpServlet {
 		System.out.println(president.getTracker());
 		req.setAttribute("presidents", pres);
 		req.setAttribute("president", president);
-		req.setAttribute("tracker", tracker);
-		req.setAttribute("pres", pres.get(tracker) );
+		req.setAttribute("tracker", president.getTracker());
+		req.setAttribute("pres", pres.get(president.getTracker()) );
 		req.getRequestDispatcher("Presidents.jsp").forward(req, resp);
 	}
 

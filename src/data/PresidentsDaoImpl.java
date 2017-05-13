@@ -24,12 +24,12 @@ public class PresidentsDaoImpl implements PresidentsDAO{
 	public int getNext() {
 //		tracker++;
 		System.out.println("in getNext");
-		return tracker+1;
+		return tracker +1;
 	}
 	public int getPrevious() {
-		tracker--;
+//		tracker--;
 		System.out.println("in getPrevious");
-		return tracker-1;
+		return tracker + -1;
 	}
 	public int getTracker() {
 		return tracker;
