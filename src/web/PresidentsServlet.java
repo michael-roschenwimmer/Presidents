@@ -25,7 +25,7 @@ public class PresidentsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		boolean filtered = false;
 		List<President> pres;
-		PresidentsDAO president = new PresidentsDaoImpl(this.getServletContext());
+		PresidentsDaoImpl president = new PresidentsDaoImpl(this.getServletContext());
 		
 		//req.setAttribute("presPic", pres.getPic());
 		//"PresidentPics/44.jpg"
@@ -38,7 +38,9 @@ public class PresidentsServlet extends HttpServlet {
 		}
 		
 		int tracker = 0;
-		req.setAttribute("tracker", tracker);
+		req.setAttribute("presidents", pres);
+		req.setAttribute("president", president);
+		req.setAttribute("tracker", president.getTracker());
 		req.setAttribute("pres", pres.get(tracker) );
 		req.getRequestDispatcher("Presidents.jsp").forward(req, resp);
 	}

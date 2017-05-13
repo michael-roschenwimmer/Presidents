@@ -10,36 +10,37 @@
 </head>
 <body>
 
-	<form action="${filtered = true}">
+	<form action="something.do" method="post">
 	Filter by:
 	<select>
 	<option> party </option>
-	<option> name </option>
-	<option> 
+	<option> name </option> 
 	</select>
-	
+	<input type="hidden" name="filter" value="true" />
+	<%-- <p hidden> ${filtered = true} </p> --%>
+	<button type="submit" >Submit</button>
 	
 	</form>
 	
-	<form action="${tracker = Integer.parseInt(req.getParameter(term))}" >
+	<%-- <form action="${tracker = Integer.parseInt(req.getParameter(term))}" >
 	Search by term <input type="text" name="term"> <br>
 	<input type="submit"/>
-	</form>
+	</form> --%>
 	
 	
-		<div id="presPic"> <img src="${pres.pic}"/> </div>
+		<div id="presPic"> <img src="${president.getPic(pres)}"/> </div>
 		<div id="presStats">President ${pres.name} | Term:${pres.termNumber} 
 		[ ${pres.startYear} - ${pres.endYear} ]</div>
 		
-		<c:choose>
-     <c:when test="${tracker.index +1 != presidents.size}">
-     	<form action="">
-     	<button type="submit" value="${tracker.next} Next"/>
+		 <c:choose>
+     <c:when test="${tracker +1 != presidents.size()}">
+     	<form action="" method="post">
+     	<button type="submit" value="${tracker = tracker+1} Next"/>
      	</form>
      </c:when>
      <c:otherwise>
       <button type="submit" disabled>Next</button>
      </c:otherwise>
-    </c:choose>
+    </c:choose> 
 </body>
 </html>

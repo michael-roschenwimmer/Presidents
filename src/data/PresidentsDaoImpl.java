@@ -39,7 +39,7 @@ public class PresidentsDaoImpl implements PresidentsDAO{
 	public List<President> loadPresidentsFromFile(ServletContext context) {
 		InputStream is = context.getResourceAsStream("WEB-INF/presidents.txt");
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-			String record = reader.readLine();
+			String record;
 			while ((record = reader.readLine()) != null) {
 				
 				String[] column = record.split("\\|");
