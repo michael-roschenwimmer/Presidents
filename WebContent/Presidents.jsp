@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="master.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Presidential</title>
+<link rel="stylesheet" href="master.css">
 </head>
 <body>
 

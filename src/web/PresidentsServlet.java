@@ -28,7 +28,11 @@ public class PresidentsServlet extends HttpServlet {
 		List<President> pres;
 	   
 		if(req.getParameter("result") != null){
-		president.setTracker(president.getTracker() + Integer.parseInt(req.getParameter("result")));
+			if(req.getParameter("result").equals("")){
+				president.setTracker(44);
+			} else{
+			president.setTracker(president.getTracker() + Integer.parseInt(req.getParameter("result")));
+			}
 		}
 		
 		
@@ -39,8 +43,8 @@ public class PresidentsServlet extends HttpServlet {
 			pres = new ArrayList<>();
 		}
 		
-		if(req.getParameter("filterNum")!= null){
-			president.setTracker(Integer.parseInt(req.getParameter("filterNum")));
+		if(req.getParameter("filterNum") != null && !req.getParameter("filterNum").equals("")){
+			president.setTracker(Integer.parseInt(req.getParameter("filterNum"))-1);
 		}
 		
 		System.out.println(president.getTracker());

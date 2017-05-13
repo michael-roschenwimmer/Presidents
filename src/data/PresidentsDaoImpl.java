@@ -68,7 +68,7 @@ public class PresidentsDaoImpl implements PresidentsDAO{
 				String firstName = column[1];
 				String middleName = column[2];
 				String lastName = column[3];
-				String name = firstName.concat(middleName).concat(lastName);
+				String name = firstName.concat(" " + middleName).concat(" " + lastName);
 				String year = column[4];
 				String[] years = year.split("-");
 				int startYear = Integer.parseInt(years[0]);
