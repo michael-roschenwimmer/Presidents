@@ -32,15 +32,37 @@
 		<div id="presStats">President ${pres.name} | Term:${pres.termNumber} 
 		[ ${pres.startYear} - ${pres.endYear} ]</div>
 		
-		 <c:choose>
-     <c:when test="${tracker +1 != presidents.size()}">
-     	<form action="" method="post">
-     	<button type="submit" value="${tracker = tracker+1} Next"/>
+		 
+     <c:if test="${tracker +1 != presidents.size()}">
+     <input type="hidden" name="tracker" value="${president.getPrevious()}" />
+     	<form action="next.do" method="post">
+     	<button type="submit">Next</button>
      	</form>
-     </c:when>
-     <c:otherwise>
-      <button type="submit" disabled>Next</button>
-     </c:otherwise>
-    </c:choose> 
+     </c:if>
+     
+     <c:if test="${tracker +1 == presidents.size()}">
+     	<form action="next.do" method="post">
+     	<label>Next<button type="submit" value="Next"  disabled></button></label>
+     	</form>
+     </c:if>
+     
+    
+    
+    
+     
+     <c:if test="${tracker != 0}">
+     	<form action="back.do" method="post">
+     	<input type="hidden" name="tracker" value="${president.getPrevious()}" />
+     	<button type="submit">back</button>
+     	</form>
+     </c:if>
+     <c:if test="${tracker == 0}">
+     	<form action="back.do" method="post">
+     	<label>Back <button type="submit" disabled></button></label>
+     	</form>
+     </c:if>
+     
+     
+     
 </body>
 </html>

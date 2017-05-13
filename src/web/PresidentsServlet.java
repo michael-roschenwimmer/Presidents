@@ -15,7 +15,8 @@ import data.PresidentsDaoImpl;
 
 //@WebServlet("Presidents")
 public class PresidentsServlet extends HttpServlet {
-
+	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("Welcome.jsp").forward(req, resp);
@@ -23,10 +24,13 @@ public class PresidentsServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		PresidentsDaoImpl president = new PresidentsDaoImpl(this.getServletContext());
 		boolean filtered = false;
 		List<President> pres;
-		PresidentsDaoImpl president = new PresidentsDaoImpl(this.getServletContext());
 		
+		if(req.getParameter("tracker")!=null){
+		president.setTracker(Integer.parseInt(req.getParameter("tracker")));
+		}
 		//req.setAttribute("presPic", pres.getPic());
 		//"PresidentPics/44.jpg"
 		
@@ -37,11 +41,11 @@ public class PresidentsServlet extends HttpServlet {
 			pres = new ArrayList<>();
 		}
 		
-		int tracker = 0;
+		System.out.println(president.getTracker());
 		req.setAttribute("presidents", pres);
 		req.setAttribute("president", president);
 		req.setAttribute("tracker", president.getTracker());
-		req.setAttribute("pres", pres.get(tracker) );
+		req.setAttribute("pres", pres.get(president.getTracker()) );
 		req.getRequestDispatcher("Presidents.jsp").forward(req, resp);
 	}
 	

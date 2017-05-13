@@ -15,23 +15,27 @@ import javax.servlet.ServletContext;
 public class PresidentsDaoImpl implements PresidentsDAO{
 	private ServletContext context;
 	private List<President> presidents = new ArrayList<>();
-	private int tracker = 0;
+	private static int tracker = 0;
 	
 	public PresidentsDaoImpl(ServletContext context) {
 		this.context = context;
 	}
 	
-	public void getNext() {
-		tracker++;
+	public int getNext() {
+//		tracker++;
+		System.out.println("in getNext");
+		return tracker+1;
 	}
-	public void getPrevious() {
-		tracker--;
+	public int getPrevious() {
+//		tracker--;
+		System.out.println("in getPrevious");
+		return tracker-1;
 	}
 	public int getTracker() {
 		return tracker;
 	}
 	public void setTracker(int t) {
-		this.tracker = t;
+		tracker = t;
 	}
 	
 	
