@@ -12,7 +12,7 @@ img.president {
   margin-right: auto; */
 	position: absolute;
 	bottom: 10%;
-	right: 15%;
+	right: 25%;
 }
 
 .backButton {
@@ -21,7 +21,7 @@ img.president {
   margin-right: auto; */
 	position: absolute;
 	bottom: 10%;
-	left:15%;
+	left:25%;
 }
 
 button.center {
