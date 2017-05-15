@@ -30,8 +30,8 @@ strong:hover{
   margin-left: auto;
   margin-right: auto; */
 	position: absolute;
-	bottom: 14%;
-	right: 15%;
+	bottom: 20%;
+	right: 23%;
 }
 
 .backButton {
@@ -39,8 +39,8 @@ strong:hover{
   margin-left: auto;
   margin-right: auto; */
 	position: absolute;
-	bottom: 14%;
-	left: 15%;
+	bottom: 20%;
+	left: 23%;
 }
 
 button.center {

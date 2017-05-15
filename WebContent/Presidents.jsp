@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="master.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Presidential</title>
-<link rel="stylesheet" href="master.css">
 </head>
 <body>
 	<img src="zapPatriot.gif" alt="zapPatriot" class="zap" />
@@ -90,15 +89,6 @@
 		<em>President ${pres.name}</em> | Term:${pres.termNumber} [ ${pres.startYear} -
 		${pres.endYear} ] <br> ${pres.funFact}
 	</div>
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
