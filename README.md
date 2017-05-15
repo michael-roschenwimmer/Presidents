@@ -1,6 +1,6 @@
 ## This is our (Week 6) Presidents Web Group Project
 
-Project Application:
+Project Application:  (access via this link: http://52.11.199.1:8080/PresidentsWeb/)
 
 1) When you arrive to the initial page of the Presidents Web application you are greeted with a Zap Brannigan.gif from Futurama at the top of the page, a large President's Seal picture (which links to the rest of the application). There is instruction below the image which directs the user to click on the President's Seal in order to move to the rest of the application.
 
