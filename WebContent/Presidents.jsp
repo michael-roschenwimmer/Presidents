@@ -13,17 +13,17 @@
 <body>
 <img src="zapPatriot.gif" alt="zapPatriot" class="zap"/>
 
-	<%-- <form action="something.do" method="post">
+	 <form action="something.do" method="post">
 	Filter by:
 	<select>
 	<option> party </option>
 	<option> name </option> 
 	</select>
-	<input type="hidden" name="filter" value="true" />
-	<p hidden> ${filtered = true} </p>
+	<input type="text" name="filter"  />
+	<p hidden> </p>
 	<button type="submit" >Submit</button>
 	
-	</form> --%>
+	</form> 
 	
 	<%-- <form action="${tracker = Integer.parseInt(req.getParameter(term))}" >
 	Search by term <input type="text" name="term"> <br>
