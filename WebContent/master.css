@@ -6,6 +6,25 @@ img.president {
 	border: 3px solid black;
 }
 
+input[type=text] {
+    padding:5px; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: white;
+    border:2px solid blue; 
+    color: crimson;
+    font-weight: bolder;
+     
+}
+
+em:hover {
+    color: crimson;
+}
+
+strong:hover{
+	color: blue;
+}
+
 .nextButton {
 	/*  display: block;
   margin-left: auto;
